@@ -1,0 +1,18 @@
+<h2 mat-dialog-title>Edit Contact</h2>
+<p>Edit contact info for {{data.id}}</p>
+<p>
+    <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput required [value]="data.name" [(ngModel)]="data.name">
+    </mat-form-field>
+</p>
+<p>
+    <mat-form-field>
+        <mat-label>Phone Number</mat-label>
+        <input type="tel" matInput [value]="data.phoneNumber" [(ngModel)]="data.phoneNumber">
+    </mat-form-field>
+</p>
+<mat-dialog-actions>
+    <button mat-raised-button [mat-dialog-close]=false>Cancel</button>
+    <button mat-raised-button [mat-dialog-close]="data">Edit</button>
+</mat-dialog-actions>

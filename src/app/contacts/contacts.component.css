@@ -1,0 +1,56 @@
+.directory-header {
+    text-align: center;
+    color:rgb(17, 177, 230);
+    font-size: 18px;
+    font-weight: 600;
+    justify-content: space-between;
+    padding-block-start: 5%;
+    border-bottom: 1px solid rgba(152, 178, 187, 0.632);
+}
+.btn-normal {
+    background-color: white;
+    border-radius: 5px;
+    border-color: rgb(17, 177, 230);
+    color: rgb(17, 177, 230);
+    padding: 5px;
+    margin: 5px;
+    padding-inline: 10px;
+    font-weight: 600;
+}
+.th-sortable {
+    text-align: left;
+    cursor: pointer;
+}
+.th-sortable:hover {
+    background-color: rgb(240, 240, 240);
+}
+table {
+    padding: 10px;
+    margin-inline: auto;
+}
+th, td {
+    padding-left: 10px;
+    padding-right: 20px;
+    padding-block: 5px;
+}
+td {
+    border-top: 1px solid rgba(152, 178, 187, 0.632);
+}
+select {
+    border: none;
+    cursor: pointer;
+}
+.dropdown-menu-btn {
+    color: black;
+    background-color: white;
+    border-width: 0px;
+    padding: 5px;
+    margin: 0px;
+}
+.dropdown-menu-option {
+    color: black;
+    text-align: left;
+}
+.mat-sort-header-container {
+    align-items: center;
+}

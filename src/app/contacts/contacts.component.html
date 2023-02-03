@@ -1,0 +1,36 @@
+<header class="directory-header">
+        <div>
+        <span style="padding-right: 10%">Contact Directory</span>
+        <span style="padding-left: 10%;"><button class="btn-normal"
+            (click)="createContact()">Add Contact +
+        </button></span>
+        </div>
+</header>
+
+<body>
+    <table id="contacts" matSort (matSortChange)="sortData($event)">
+        <tr>
+            <th class="th-sortable" mat-sort-header="id">CID</th>
+            <th class="th-sortable" mat-sort-header="name">Name</th>
+            <th class="th-sortable" mat-sort-header="phoneNumber">Phone Number</th>
+        </tr>
+        <tr *ngFor="let contact of sortedData" class="editable-row">
+            <td>{{contact.id}}</td>
+            <td>{{contact.name}}</td>
+            <td>{{contact.phoneNumber}}</td>
+            <button class="dropdown-menu-btn" mat-icon-button [matMenuTriggerFor]="menu">
+                <mat-icon>more_vert</mat-icon> 
+            </button>
+                <mat-menu #menu="matMenu">
+                    <button class="dropdown-menu-option" mat-menu-item
+                        (click)="editContact(contact)">
+                        <span>Edit</span>
+                    </button>
+                    <button class="dropdown-menu-option" mat-menu-item
+                        (click)="confirmDelete(contact)">
+                        <span>Delete</span>
+                    </button>
+                </mat-menu>
+        </tr>
+    </table>
+</body>

@@ -1,0 +1,29 @@
+<h2 mat-dialog-title>Create Contact</h2>
+<p>
+    <mat-form-field>
+        <mat-label>Name</mat-label>
+        <input matInput [formControl]="nameFormControl"
+            [(ngModel)]="data.name" required>
+        <mat-error *ngIf="nameFormControl.hasError('required')">
+            Name is <strong>required</strong>.
+        </mat-error>
+    </mat-form-field>
+</p>
+<p>
+    <mat-form-field>
+        <mat-label>Phone Number</mat-label>
+        <input type="tel" matInput [formControl]="phoneFormControl"
+            [(ngModel)]="data.phoneNumber">
+        <mat-error *ngIf="phoneFormControl.hasError('pattern')">
+            Invalid phone number. Unexpected letter characters.
+        </mat-error>
+    </mat-form-field>
+</p>
+<mat-dialog-actions>
+    <button mat-raised-button [mat-dialog-close]=false
+        >Cancel</button>
+    <button mat-raised-button
+        [disabled]="phoneFormControl.hasError('pattern') 
+        || nameFormControl.hasError('required')"
+        [mat-dialog-close]="data">Create</button>
+</mat-dialog-actions>
